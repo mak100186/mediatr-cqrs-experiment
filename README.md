@@ -1,0 +1,1 @@
+# mediatr-cqrs-experiment
