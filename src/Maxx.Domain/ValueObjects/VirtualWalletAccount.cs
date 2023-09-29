@@ -8,9 +8,9 @@ using Shared;
 
 public sealed class VirtualWalletAccount : ValueObject
 {
-    private VirtualWalletAccount(Guid accountId) => this.AccountId = accountId;
+    private VirtualWalletAccount(Guid value) => Value = value;
 
-    public Guid AccountId { get; }
+    public Guid Value { get; }
 
     public static Result<VirtualWalletAccount> Create(string accountId)
     {
@@ -29,6 +29,6 @@ public sealed class VirtualWalletAccount : ValueObject
 
     public override IEnumerable<object> GetAtomicValues()
     {
-        yield return this.AccountId;
+        yield return Value;
     }
 }

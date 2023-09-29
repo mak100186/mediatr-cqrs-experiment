@@ -12,7 +12,7 @@ public sealed class LastName : ValueObject
 
     private LastName(string value)
     {
-        this.Value = value;
+        Value = value;
     }
 
     public string Value { get; }
@@ -34,6 +34,6 @@ public sealed class LastName : ValueObject
 
     public override IEnumerable<object> GetAtomicValues()
     {
-        yield return this.Value;
+        yield return Value;
     }
 }

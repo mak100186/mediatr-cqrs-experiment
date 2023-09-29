@@ -8,7 +8,7 @@ public class Entitlement : AggregateRoot, IAuditableEntity
 {
     private Entitlement()
     {
-        
+
     }
 
     private Entitlement(Guid rewardId, Guid customerId) : base(Guid.NewGuid())

@@ -16,8 +16,8 @@ public class Reward : AggregateRoot, IAuditableEntity
         MetaData metaData)
         : base(id)
     {
-        this.Type = type;
-        this.MetaData = metaData;
+        Type = type;
+        MetaData = metaData;
     }
 
     public RewardType Type { get; set; }
@@ -54,17 +54,17 @@ public class FreeBetMetaData : MetaData
 {
     public FreeBetMetaData()
     {
-        this.Type = typeof(FreeBetMetaData);
+        Type = typeof(FreeBetMetaData);
     }
 
     public decimal Amount { get; set; }
 
     public override IEnumerable<object> GetAtomicValues()
     {
-        yield return this.Amount;
-        yield return this.Type;
-        yield return this.StartDate;
-        yield return this.ExpiryDate;
+        yield return Amount;
+        yield return Type;
+        yield return StartDate;
+        yield return ExpiryDate;
     }
 }
 
@@ -72,17 +72,17 @@ public class FreeBetBalanceMetaData : MetaData
 {
     public FreeBetBalanceMetaData()
     {
-        this.Type = typeof(FreeBetBalanceMetaData);
+        Type = typeof(FreeBetBalanceMetaData);
     }
 
     public decimal Amount { get; set; }
 
     public override IEnumerable<object> GetAtomicValues()
     {
-        yield return this.Amount;
-        yield return this.Type;
-        yield return this.StartDate;
-        yield return this.ExpiryDate;
+        yield return Amount;
+        yield return Type;
+        yield return StartDate;
+        yield return ExpiryDate;
     }
 }
 
@@ -90,17 +90,17 @@ public class UniBoostMetaData : MetaData
 {
     public UniBoostMetaData()
     {
-        this.Type = typeof(UniBoostMetaData);
+        Type = typeof(UniBoostMetaData);
     }
 
     public decimal Boost { get; set; }
 
     public override IEnumerable<object> GetAtomicValues()
     {
-        yield return this.Boost;
-        yield return this.Type;
-        yield return this.StartDate;
-        yield return this.ExpiryDate;
+        yield return Boost;
+        yield return Type;
+        yield return StartDate;
+        yield return ExpiryDate;
     }
 }
 
@@ -108,7 +108,7 @@ public class UniBoostReloadMetaData : UniBoostMetaData
 {
     public UniBoostReloadMetaData()
     {
-        this.Type = typeof(UniBoostReloadMetaData);
+        Type = typeof(UniBoostReloadMetaData);
     }
 
     public int ReloadCount { get; set; }
@@ -116,11 +116,11 @@ public class UniBoostReloadMetaData : UniBoostMetaData
 
     public override IEnumerable<object> GetAtomicValues()
     {
-        yield return this.ReloadCount;
-        yield return this.ReloadInterval;
-        yield return this.Type;
-        yield return this.StartDate;
-        yield return this.ExpiryDate;
+        yield return ReloadCount;
+        yield return ReloadInterval;
+        yield return Type;
+        yield return StartDate;
+        yield return ExpiryDate;
     }
 }
 
@@ -128,16 +128,16 @@ public class ProfitBoostMetaData : MetaData
 {
     public ProfitBoostMetaData()
     {
-        this.Type = typeof(ProfitBoostMetaData);
+        Type = typeof(ProfitBoostMetaData);
     }
 
     public IDictionary<int, decimal> LegTable { get; set; }
 
     public override IEnumerable<object> GetAtomicValues()
     {
-        yield return this.LegTable;
-        yield return this.Type;
-        yield return this.StartDate;
-        yield return this.ExpiryDate;
+        yield return LegTable;
+        yield return Type;
+        yield return StartDate;
+        yield return ExpiryDate;
     }
 }

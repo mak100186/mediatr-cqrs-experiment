@@ -4,7 +4,7 @@ public sealed class ValidationResult : Result, IValidationResult
 {
     private ValidationResult(Error[] errors)
         : base(false, IValidationResult.ValidationError) =>
-        this.Errors = errors;
+        Errors = errors;
 
     public Error[] Errors { get; }
 

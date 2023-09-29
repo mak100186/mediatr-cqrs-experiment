@@ -7,8 +7,8 @@ public class Error : IEquatable<Error>
 
     public Error(string code, string message)
     {
-        this.Code = code;
-        this.Message = message;
+        Code = code;
+        Message = message;
     }
 
     public string Code { get; }
@@ -41,12 +41,12 @@ public class Error : IEquatable<Error>
             return false;
         }
 
-        return this.Code == other.Code && this.Message == other.Message;
+        return Code == other.Code && Message == other.Message;
     }
 
-    public override bool Equals(object? obj) => obj is Error error && this.Equals(error);
+    public override bool Equals(object? obj) => obj is Error error && Equals(error);
 
-    public override int GetHashCode() => HashCode.Combine(this.Code, this.Message);
+    public override int GetHashCode() => HashCode.Combine(Code, Message);
 
-    public override string ToString() => this.Code;
+    public override string ToString() => Code;
 }

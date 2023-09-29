@@ -8,7 +8,7 @@ using Shared;
 
 public sealed class Email : ValueObject
 {
-    private Email(string value) => this.Value = value;
+    private Email(string value) => Value = value;
 
     public string Value { get; }
 
@@ -29,6 +29,6 @@ public sealed class Email : ValueObject
 
     public override IEnumerable<object> GetAtomicValues()
     {
-        yield return this.Value;
+        yield return Value;
     }
 }

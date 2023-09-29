@@ -2,7 +2,7 @@
 
 public abstract class Entity : IEquatable<Entity>
 {
-    protected Entity(Guid id) => this.Id = id;
+    protected Entity(Guid id) => Id = id;
 
     protected Entity()
     {
@@ -23,12 +23,12 @@ public abstract class Entity : IEquatable<Entity>
             return false;
         }
 
-        if (other.GetType() != this.GetType())
+        if (other.GetType() != GetType())
         {
             return false;
         }
 
-        return other.Id == this.Id;
+        return other.Id == Id;
     }
 
     public override bool Equals(object? obj)
@@ -38,7 +38,7 @@ public abstract class Entity : IEquatable<Entity>
             return false;
         }
 
-        if (obj.GetType() != this.GetType())
+        if (obj.GetType() != GetType())
         {
             return false;
         }
@@ -48,8 +48,8 @@ public abstract class Entity : IEquatable<Entity>
             return false;
         }
 
-        return entity.Id == this.Id;
+        return entity.Id == Id;
     }
 
-    public override int GetHashCode() => this.Id.GetHashCode() * 41;
+    public override int GetHashCode() => Id.GetHashCode() * 41;
 }

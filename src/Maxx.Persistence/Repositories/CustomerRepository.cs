@@ -1,8 +1,13 @@
-﻿namespace Maxx.Persistence.Repositories;
+﻿using Maxx.Domain.ValueObjects;
 
-using Domain.Repositories;
+using Microsoft.EntityFrameworkCore;
+
+namespace Maxx.Persistence.Repositories;
+
+using System;
 
 using Domain.Entities;
+using Domain.Repositories;
 
 internal sealed class CustomerRepository : ICustomerRepository
 {
@@ -10,7 +15,7 @@ internal sealed class CustomerRepository : ICustomerRepository
 
     public CustomerRepository(ApplicationDbContext dbContext)
     {
-        this._dbContext = dbContext;
+        _dbContext = dbContext;
     }
 
     public void Add(Customer customer)
@@ -20,6 +25,16 @@ internal sealed class CustomerRepository : ICustomerRepository
 
     public void Update(Customer customer)
     {
-        this._dbContext.Set<Customer>().Update(customer);
+        _dbContext.Set<Customer>().Update(customer);
     }
+
+    public async Task<bool> IsEmailUniqueAsync(Email emailResultValue, CancellationToken cancellationToken) =>
+         !await _dbContext
+             .Set<Customer>()
+            .AnyAsync(x=> x.Email.Equals(emailResultValue), cancellationToken);
+
+    public async Task<Customer?> GetByIdAsync(Guid id, CancellationToken cancellationToken) =>
+        await _dbContext
+            .Set<Customer>()
+            .FirstOrDefaultAsync(member => member.Id == id, cancellationToken);
 }

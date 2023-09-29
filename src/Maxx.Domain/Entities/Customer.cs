@@ -2,9 +2,9 @@
 
 using DomainEvents;
 
-using ValueObjects;
-
 using Primitives;
+
+using ValueObjects;
 
 public class Customer : AggregateRoot, IAuditableEntity
 {

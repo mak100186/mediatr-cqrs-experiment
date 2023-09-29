@@ -9,10 +9,10 @@ internal sealed class RewardRepository : IRewardRepository
 
     public RewardRepository(ApplicationDbContext dbContext)
     {
-        this._dbContext = dbContext;
+        _dbContext = dbContext;
     }
     public void Add(Reward reward)
     {
-        this._dbContext.Set<Reward>().Add(reward);
+        _dbContext.Set<Reward>().Add(reward);
     }
 }

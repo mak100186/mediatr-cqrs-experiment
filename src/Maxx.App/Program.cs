@@ -1,18 +1,44 @@
-var builder = WebApplication.CreateBuilder(args);
+using Carter;
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+using Maxx.App;
 
-var app = builder.Build();
+using Serilog;
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+Log.Logger = LoggingSetup.CreateBootstrapLogger();
+
+try
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    var builder = WebApplication.CreateBuilder(args);
+
+    builder.Services
+        .ConfigureScrutor()
+        .ConfigureValidators()
+        .ConfigureCarterEndpoints()
+        .ConfigureMediatR()
+        .ConfigureSwagger()
+        .ConfigureDatabase(builder.Configuration)
+        .ConfigureQuartz();
+
+    var app = builder.Build();
+
+    // Configure the HTTP request pipeline.
+    if (app.Environment.IsDevelopment())
+    {
+        app.UseSwagger();
+        app.UseSwaggerUI();
+    }
+
+    app.UseHttpsRedirection();
+
+    app.MapCarter();
+
+    app.Run();
 }
-
-app.UseHttpsRedirection();
-
-app.Run();
+catch (Exception ex)
+{
+    Log.Fatal(ex, "Application terminated unexpectedly");
+}
+finally
+{
+    Log.CloseAndFlush();
+}

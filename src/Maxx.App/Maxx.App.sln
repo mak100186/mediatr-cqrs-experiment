@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34009.444
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maxx.App", "Maxx.App.csproj", "{B17E53BF-DA85-4FE7-8818-99F875618DDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maxx.App", "Maxx.App.csproj", "{B17E53BF-DA85-4FE7-8818-99F875618DDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maxx.Domain", "..\Maxx.Domain\Maxx.Domain.csproj", "{FB8A5BF6-3E0E-4D08-857D-28068EEBBD0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maxx.Domain", "..\Maxx.Domain\Maxx.Domain.csproj", "{FB8A5BF6-3E0E-4D08-857D-28068EEBBD0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maxx.Persistence", "..\Maxx.Persistence\Maxx.Persistence.csproj", "{9072BABB-E5BF-46E6-8295-316269DA23E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maxx.Persistence", "..\Maxx.Persistence\Maxx.Persistence.csproj", "{9072BABB-E5BF-46E6-8295-316269DA23E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maxx.Infrastructure", "..\Maxx.Infrastructure\Maxx.Infrastructure.csproj", "{590932C4-3A60-4CF4-8B81-BB395AD0A7F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maxx.Application", "..\Maxx.Application\Maxx.Application.csproj", "{A2F0FC11-7280-4289-A9A9-637C92040D2A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{9072BABB-E5BF-46E6-8295-316269DA23E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9072BABB-E5BF-46E6-8295-316269DA23E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9072BABB-E5BF-46E6-8295-316269DA23E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{590932C4-3A60-4CF4-8B81-BB395AD0A7F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{590932C4-3A60-4CF4-8B81-BB395AD0A7F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{590932C4-3A60-4CF4-8B81-BB395AD0A7F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{590932C4-3A60-4CF4-8B81-BB395AD0A7F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2F0FC11-7280-4289-A9A9-637C92040D2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2F0FC11-7280-4289-A9A9-637C92040D2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2F0FC11-7280-4289-A9A9-637C92040D2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2F0FC11-7280-4289-A9A9-637C92040D2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

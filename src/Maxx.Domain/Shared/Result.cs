@@ -14,13 +14,13 @@ public class Result
             throw new InvalidOperationException();
         }
 
-        this.IsSuccess = isSuccess;
-        this.Error = error;
+        IsSuccess = isSuccess;
+        Error = error;
     }
 
     public bool IsSuccess { get; }
 
-    public bool IsFailure => !this.IsSuccess;
+    public bool IsFailure => !IsSuccess;
 
     public Error Error { get; }
 

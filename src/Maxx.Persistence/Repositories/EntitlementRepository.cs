@@ -9,10 +9,10 @@ internal sealed class EntitlementRepository : IEntitlementRepository
 
     public EntitlementRepository(ApplicationDbContext dbContext)
     {
-        this._dbContext = dbContext;
+        _dbContext = dbContext;
     }
     public void Add(Entitlement entitlement)
     {
-        this._dbContext.Set<Entitlement>().Add(entitlement);
+        _dbContext.Set<Entitlement>().Add(entitlement);
     }
 }
